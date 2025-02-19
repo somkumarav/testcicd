@@ -46,7 +46,4 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
-          script: |
-            ifconfig
-            whoami
-            node -v
+          script: ./deploy.sh
