@@ -19,6 +19,6 @@ jobs:
         with:
           host: ubuntu@64.227.165.59
           username: linuxserver.io
-          password: ${{ secrets.PRIVATE_SSH_KEY }}
+          key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
           script: whoami
