@@ -14,13 +14,11 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - run: echo "🎉 The job was automatically triggered by a ${{ secrets.PRIVATE_SSH_KEY }} event."
-
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: 64.227.165.59
-          username: ubuntu
+          username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
           script: whoami
