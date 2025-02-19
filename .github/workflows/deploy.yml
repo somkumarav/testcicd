@@ -23,6 +23,7 @@ jobs:
           port: 22
           script: |
             cd testcicd
+            ls
             git pull
             node -v
             npm -v
