@@ -24,6 +24,8 @@ jobs:
           script: |
             cd testcicd
             git pull
+            node -v
+            npm -v
             npm install
             npm run build
             npm run start
