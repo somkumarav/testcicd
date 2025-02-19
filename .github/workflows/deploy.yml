@@ -46,4 +46,4 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
-          script: ./deploy.sh
+          script: ./testcicd/deploy.sh
