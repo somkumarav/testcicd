@@ -1,3 +1,28 @@
+# name: Deploy to droplet
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     name: push to droplet
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout the code
+#         uses: actions/checkout@v2
+
+#       - name: executing remote ssh commands using ssh
+#         uses: appleboy/ssh-action@v1.2.0
+#         with:
+#           host: 64.227.165.59
+#           username: root
+#           key: ${{ secrets.PRIVATE_SSH_KEY }}
+#           port: 22
+#           script: ./deploy.sh
+
 name: Deploy to droplet
 
 on:
@@ -7,7 +32,7 @@ on:
 
 jobs:
   deploy:
-    name: push to droplet
+    name: Push to droplet
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +46,4 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
-          script: ./deploy.sh
+          script: node -v
