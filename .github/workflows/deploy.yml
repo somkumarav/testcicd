@@ -46,4 +46,6 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_SSH_KEY }}
           port: 22
-          script: node -v
+          script: |
+            whoami
+            node -v
