@@ -1,0 +1,24 @@
+name: Deploy to droplet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: push to droplet
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ubuntu@64.227.165.59
+          username: linuxserver.io
+          password: ${{ secrets.PRIVATE_SSH_KEY }}
+          port: 22
+          script: whoami
